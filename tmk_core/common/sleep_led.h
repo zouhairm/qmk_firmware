@@ -1,7 +1,6 @@
 #ifndef SLEEP_LED_H
 #define SLEEP_LED_H
 
-
 #ifdef SLEEP_LED_ENABLE
 
 void sleep_led_init(void);

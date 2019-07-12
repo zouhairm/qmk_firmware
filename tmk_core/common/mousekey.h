@@ -26,22 +26,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* max value on report descriptor */
 #ifndef MOUSEKEY_MOVE_MAX
-  #define MOUSEKEY_MOVE_MAX       127
+#define MOUSEKEY_MOVE_MAX 127
 #elif MOUSEKEY_MOVE_MAX > 127
-  #error MOUSEKEY_MOVE_MAX needs to be smaller than 127
+#error MOUSEKEY_MOVE_MAX needs to be smaller than 127
 #endif
 
 #ifndef MOUSEKEY_WHEEL_MAX
-  #define MOUSEKEY_WHEEL_MAX      127
+#define MOUSEKEY_WHEEL_MAX 127
 #elif MOUSEKEY_WHEEL_MAX > 127
-  #error MOUSEKEY_WHEEL_MAX needs to be smaller than 127
+#error MOUSEKEY_WHEEL_MAX needs to be smaller than 127
 #endif
 
 #ifndef MOUSEKEY_MOVE_DELTA
-#define MOUSEKEY_MOVE_DELTA     5
+#define MOUSEKEY_MOVE_DELTA 5
 #endif
 #ifndef MOUSEKEY_WHEEL_DELTA
-#define MOUSEKEY_WHEEL_DELTA    1
+#define MOUSEKEY_WHEEL_DELTA 1
 #endif
 #ifndef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY 300

@@ -31,7 +31,6 @@
 
 #include "visualizer_keyframes.h"
 
-
 #if defined(LCD_ENABLE) || defined(LCD_BACKLIGHT_ENABLE) || defined(BACKLIGHT_ENABLE)
 
 static bool keyframe_enable(keyframe_animation_t* animation, visualizer_state_t* state) {
@@ -82,7 +81,6 @@ static bool keyframe_fade_out(keyframe_animation_t* animation, visualizer_state_
     return ret;
 }
 
-
 // Don't worry, if the startup animation is long, you can use the keyboard like normal
 // during that time
 keyframe_animation_t default_startup_animation = {
@@ -91,20 +89,20 @@ keyframe_animation_t default_startup_animation = {
 #else
     .num_frames = 2,
 #endif
-    .loop = false,
-    .frame_lengths = {
-        0, 
+    .loop          = false,
+    .frame_lengths = {0,
 #if LCD_ENABLE
-        0, 
+                      0,
 #endif
-        gfxMillisecondsToTicks(5000)},
-    .frame_functions = {
+                      gfxMillisecondsToTicks(5000)},
+    .frame_functions =
+        {
             keyframe_enable,
 #if LCD_ENABLE
             lcd_keyframe_draw_logo,
 #endif
             keyframe_fade_in,
-    },
+        },
 };
 
 keyframe_animation_t default_suspend_animation = {
@@ -114,19 +112,20 @@ keyframe_animation_t default_suspend_animation = {
     .num_frames = 2,
 #endif
     .loop = false,
-    .frame_lengths = {
+    .frame_lengths =
+        {
 #if LCD_ENABLE
-        0, 
+            0,
 #endif
-        gfxMillisecondsToTicks(1000), 
-        0},
-    .frame_functions = {
+            gfxMillisecondsToTicks(1000), 0},
+    .frame_functions =
+        {
 #if LCD_ENABLE
             lcd_keyframe_display_layer_text,
 #endif
             keyframe_fade_out,
             keyframe_disable,
-    },
+        },
 };
 #endif
 
@@ -136,40 +135,42 @@ keyframe_animation_t default_suspend_animation = {
 
 keyframe_animation_t led_test_animation = {
     .num_frames = 14,
-    .loop = true,
-    .frame_lengths = {
-        gfxMillisecondsToTicks(1000), // fade in
-        gfxMillisecondsToTicks(1000), // no op (leds on)
-        gfxMillisecondsToTicks(1000), // fade out
-        gfxMillisecondsToTicks(CROSSFADE_TIME), // crossfade
-        gfxMillisecondsToTicks(GRADIENT_TIME), // left to rigt (outside in)
-        gfxMillisecondsToTicks(CROSSFADE_TIME), // crossfade
-        gfxMillisecondsToTicks(GRADIENT_TIME), // top_to_bottom
-        0,           // mirror leds
-        gfxMillisecondsToTicks(CROSSFADE_TIME), // crossfade
-        gfxMillisecondsToTicks(GRADIENT_TIME), // left_to_right (mirrored, so inside out)
-        gfxMillisecondsToTicks(CROSSFADE_TIME), // crossfade
-        gfxMillisecondsToTicks(GRADIENT_TIME), // top_to_bottom
-        0,           // normal leds
-        gfxMillisecondsToTicks(CROSSFADE_TIME), // crossfade
+    .loop       = true,
+    .frame_lengths =
+        {
+            gfxMillisecondsToTicks(1000),            // fade in
+            gfxMillisecondsToTicks(1000),            // no op (leds on)
+            gfxMillisecondsToTicks(1000),            // fade out
+            gfxMillisecondsToTicks(CROSSFADE_TIME),  // crossfade
+            gfxMillisecondsToTicks(GRADIENT_TIME),   // left to rigt (outside in)
+            gfxMillisecondsToTicks(CROSSFADE_TIME),  // crossfade
+            gfxMillisecondsToTicks(GRADIENT_TIME),   // top_to_bottom
+            0,                                       // mirror leds
+            gfxMillisecondsToTicks(CROSSFADE_TIME),  // crossfade
+            gfxMillisecondsToTicks(GRADIENT_TIME),   // left_to_right (mirrored, so inside out)
+            gfxMillisecondsToTicks(CROSSFADE_TIME),  // crossfade
+            gfxMillisecondsToTicks(GRADIENT_TIME),   // top_to_bottom
+            0,                                       // normal leds
+            gfxMillisecondsToTicks(CROSSFADE_TIME),  // crossfade
 
-    },
-    .frame_functions = {
-        led_backlight_keyframe_fade_in_all,
-        keyframe_no_operation,
-        led_backlight_keyframe_fade_out_all,
-        led_backlight_keyframe_crossfade,
-        led_backlight_keyframe_left_to_right_gradient,
-        led_backlight_keyframe_crossfade,
-        led_backlight_keyframe_top_to_bottom_gradient,
-        led_backlight_keyframe_mirror_orientation,
-        led_backlight_keyframe_crossfade,
-        led_backlight_keyframe_left_to_right_gradient,
-        led_backlight_keyframe_crossfade,
-        led_backlight_keyframe_top_to_bottom_gradient,
-        led_backlight_keyframe_normal_orientation,
-        led_backlight_keyframe_crossfade,
-    },
+        },
+    .frame_functions =
+        {
+            led_backlight_keyframe_fade_in_all,
+            keyframe_no_operation,
+            led_backlight_keyframe_fade_out_all,
+            led_backlight_keyframe_crossfade,
+            led_backlight_keyframe_left_to_right_gradient,
+            led_backlight_keyframe_crossfade,
+            led_backlight_keyframe_top_to_bottom_gradient,
+            led_backlight_keyframe_mirror_orientation,
+            led_backlight_keyframe_crossfade,
+            led_backlight_keyframe_left_to_right_gradient,
+            led_backlight_keyframe_crossfade,
+            led_backlight_keyframe_top_to_bottom_gradient,
+            led_backlight_keyframe_normal_orientation,
+            led_backlight_keyframe_crossfade,
+        },
 };
 #endif
 

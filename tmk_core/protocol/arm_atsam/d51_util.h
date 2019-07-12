@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #if DEBUG_LED_ENABLE == 1
 #define DBG_LED_ENA PORT->Group[DEBUG_LED_PORT].DIRSET.reg = (1 << DEBUG_LED_PIN)
 #define DBG_LED_DIS PORT->Group[DEBUG_LED_PORT].DIRCLR.reg = (1 << DEBUG_LED_PIN)
-#define DBG_LED_ON  PORT->Group[DEBUG_LED_PORT].OUTSET.reg = (1 << DEBUG_LED_PIN)
+#define DBG_LED_ON PORT->Group[DEBUG_LED_PORT].OUTSET.reg = (1 << DEBUG_LED_PIN)
 #define DBG_LED_OFF PORT->Group[DEBUG_LED_PORT].OUTCLR.reg = (1 << DEBUG_LED_PIN)
 #else
 #define DBG_LED_ENA
@@ -37,12 +37,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #if DEBUG_PORT1_ENABLE == 1
 #define DBG_1_ENA PORT->Group[DEBUG_PORT1_PORT].DIRSET.reg = (1 << DEBUG_PORT1_PIN)
 #define DBG_1_DIS PORT->Group[DEBUG_PORT1_PORT].DIRCLR.reg = (1 << DEBUG_PORT1_PIN)
-#define DBG_1_ON  PORT->Group[DEBUG_PORT1_PORT].OUTSET.reg = (1 << DEBUG_PORT1_PIN)
+#define DBG_1_ON PORT->Group[DEBUG_PORT1_PORT].OUTSET.reg = (1 << DEBUG_PORT1_PIN)
 #define DBG_1_OFF PORT->Group[DEBUG_PORT1_PORT].OUTCLR.reg = (1 << DEBUG_PORT1_PIN)
 #else
 #define DBG_1_ENA
 #define DBG_1_DIS
-#define DBG_1_ON 
+#define DBG_1_ON
 #define DBG_1_OFF
 #endif
 
@@ -50,12 +50,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #if DEBUG_PORT2_ENABLE == 1
 #define DBG_2_ENA PORT->Group[DEBUG_PORT2_PORT].DIRSET.reg = (1 << DEBUG_PORT2_PIN)
 #define DBG_2_DIS PORT->Group[DEBUG_PORT2_PORT].DIRCLR.reg = (1 << DEBUG_PORT2_PIN)
-#define DBG_2_ON  PORT->Group[DEBUG_PORT2_PORT].OUTSET.reg = (1 << DEBUG_PORT2_PIN)
+#define DBG_2_ON PORT->Group[DEBUG_PORT2_PORT].OUTSET.reg = (1 << DEBUG_PORT2_PIN)
 #define DBG_2_OFF PORT->Group[DEBUG_PORT2_PORT].OUTCLR.reg = (1 << DEBUG_PORT2_PIN)
 #else
 #define DBG_2_ENA
 #define DBG_2_DIS
-#define DBG_2_ON 
+#define DBG_2_ON
 #define DBG_2_OFF
 #endif
 
@@ -63,12 +63,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #if DEBUG_PORT3_ENABLE == 1
 #define DBG_3_ENA PORT->Group[DEBUG_PORT3_PORT].DIRSET.reg = (1 << DEBUG_PORT3_PIN)
 #define DBG_3_DIS PORT->Group[DEBUG_PORT3_PORT].DIRCLR.reg = (1 << DEBUG_PORT3_PIN)
-#define DBG_3_ON  PORT->Group[DEBUG_PORT3_PORT].OUTSET.reg = (1 << DEBUG_PORT3_PIN)
+#define DBG_3_ON PORT->Group[DEBUG_PORT3_PORT].OUTSET.reg = (1 << DEBUG_PORT3_PIN)
 #define DBG_3_OFF PORT->Group[DEBUG_PORT3_PORT].OUTCLR.reg = (1 << DEBUG_PORT3_PIN)
 #else
 #define DBG_3_ENA
 #define DBG_3_DIS
-#define DBG_3_ON 
+#define DBG_3_ON
 #define DBG_3_OFF
 #endif
 
@@ -216,8 +216,9 @@ enum debug_code_list {
 
 #else
 
-#define DBGC(n) {}
+#define DBGC(n) \
+    {}
 
-#endif //DEBUG_BOOT_TRACING_ENABLE
+#endif  // DEBUG_BOOT_TRACING_ENABLE
 
-#endif //_D51_UTIL_H_
+#endif  //_D51_UTIL_H_

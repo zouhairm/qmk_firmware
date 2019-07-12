@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #if defined(__AVR__)
 #include <avr/pgmspace.h>
 #elif defined PROTOCOL_CHIBIOS
-//We need to ensure that chibios is include before redefining reset
+// We need to ensure that chibios is include before redefining reset
 #include "ch.h"
 #endif
 #include "keycode.h"
@@ -47,10 +47,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 uint16_t keymap_key_to_keycode(uint8_t layer, keypos_t key);
 
 // translates function id to action
-uint16_t keymap_function_id_to_action( uint16_t function_id );
+uint16_t keymap_function_id_to_action(uint16_t function_id);
 
 extern const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS];
 extern const uint16_t fn_actions[];
-
 
 #endif

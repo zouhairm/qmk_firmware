@@ -34,8 +34,7 @@ extern void adafruit_ble_task(void);
  * this set of keys.
  * Also sends a key release indicator, so that the keys do not remain
  * held down. */
-extern bool adafruit_ble_send_keys(uint8_t hid_modifier_mask, uint8_t *keys,
-                                   uint8_t nkeys);
+extern bool adafruit_ble_send_keys(uint8_t hid_modifier_mask, uint8_t *keys, uint8_t nkeys);
 
 /* Send a consumer keycode, holding it down for the specified duration
  * (milliseconds) */
@@ -45,8 +44,7 @@ extern bool adafruit_ble_send_consumer_key(uint16_t keycode, int hold_duration);
 /* Send a mouse/wheel movement report.
  * The parameters are signed and indicate positive of negative direction
  * change. */
-extern bool adafruit_ble_send_mouse_move(int8_t x, int8_t y, int8_t scroll,
-                                         int8_t pan, uint8_t buttons);
+extern bool adafruit_ble_send_mouse_move(int8_t x, int8_t y, int8_t scroll, int8_t pan, uint8_t buttons);
 #endif
 
 /* Compute battery voltage by reading an analog pin.
@@ -60,4 +58,4 @@ extern bool adafruit_ble_set_power_level(int8_t level);
 }
 #endif
 
-#endif // MODULE_ADAFRUIT_BLE
+#endif  // MODULE_ADAFRUIT_BLE

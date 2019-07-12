@@ -15,12 +15,12 @@
  */
 
 #if defined(__AVR__)
-    #include <avr/io.h>
-    #include <avr/interrupt.h>
-    #include <avr/pgmspace.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <avr/pgmspace.h>
 #else
-    #include "ch.h"
-    #include "hal.h"
+#include "ch.h"
+#include "hal.h"
 #endif
 
 #ifndef LUTS_H
@@ -30,7 +30,7 @@
 
 #define FREQUENCY_LUT_LENGTH 349
 
-extern const float vibrato_lut[VIBRATO_LUT_LENGTH];
+extern const float    vibrato_lut[VIBRATO_LUT_LENGTH];
 extern const uint16_t frequency_lut[FREQUENCY_LUT_LENGTH];
 
 #endif /* LUTS_H */
