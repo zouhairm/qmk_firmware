@@ -23,10 +23,10 @@ def main(cli):
     # Error checking
     if cli.args.filename == ('-'):
         cli.log.error('Reading from STDIN is not (yet) supported.')
-        return(False)
+        return False
     if not os.path.exists(qmk.path.normpath(cli.args.filename)):
         cli.log.error('JSON file does not exist!')
-        return(False)
+        return False
 
     # Parse the configurator json
     with open(qmk.path.normpath(cli.args.filename), 'r') as fd:
