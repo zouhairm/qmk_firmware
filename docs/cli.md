@@ -27,5 +27,15 @@ This command allows you to compile JSON files you have downloaded from <https://
 **Usage**:
 
 ```
-qmk compile-json mine.json
+qmk compile-json [configuratorExport.json]
+```
+
+## `qmk cformat`
+
+This command formats C code using clang-format. Run it with no arguments to format all core code, or pass filenames on the command line to run it on specific files.
+
+**Usage**:
+
+```
+qmk cformat [file1] [file2] [...] [fileN]
 ```
