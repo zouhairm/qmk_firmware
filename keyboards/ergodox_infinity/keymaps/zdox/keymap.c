@@ -34,9 +34,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |   ESC  |   1  |   2  |   3  |   4  |   5  |  6   |           |   5  |   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  |   \    |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------| PASTE|           |      |------+------+------+------+------+--------|
  * | BkSp   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |' / GUI |
- * |--------+------+------+------+------+------| Hyper|           | Meh  |------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------| COPY |           |      |------+------+------+------+------+--------|
  * | LShift |  Z   |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |  Up  |/RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  * |Grv/Ctrl|AltShf|  '"  | ALT  | GUI |                                        | L1   |  =   | Left | Down |Right|
@@ -63,9 +63,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_SPC,KC_ENT,KC_END,
         // right hand
              KC_5, KC_6,   KC_7,  KC_8,   KC_9,   KC_0,             KC_MINS,
-             LGUI(KC_Y),   KC_Y,   KC_U,  KC_I,   KC_O,   KC_P,             KC_BSLS,
+             KC_TRNS,   KC_Y,   KC_U,  KC_I,   KC_O,   KC_P,             KC_BSLS,
                           KC_H,   KC_J,  KC_K,   KC_L,   KC_SCLN,GUI_T(KC_QUOT), //LT(SYMB, KC_SCLN)
-             LGUI(KC_Z),KC_N,   KC_M,  KC_COMM , KC_DOT, KC_UP, KC_RSFT, //
+             KC_TRNS,KC_N,   KC_M,  KC_COMM , KC_DOT, KC_UP, KC_RSFT, //
                                   LT(SYMB,SYMB), KC_EQL , KC_LEFT, KC_DOWN, KC_RIGHT,
              TT(MDIA),        CTL_T(KC_ESC),
              KC_PGUP,
